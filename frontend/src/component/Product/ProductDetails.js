@@ -24,10 +24,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import { NEW_REVIEW_RESET } from "../../constants/productConstants";
 const ProductDetails = () => {
   const dispatch = useDispatch();
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const alert = useAlert();
   const params = useParams();
-  const {user}=useSelector(state=>state.user)
+  const { user } = useSelector((state) => state.user);
   const { product, loading, error } = useSelector(
     (state) => state.productDetails
   );
@@ -69,8 +69,8 @@ const ProductDetails = () => {
     open ? setOpen(false) : setOpen(true);
   };
   const reviewSubmiteHandler = () => {
-    if(!user){
-      navigate("/login")
+    if (!user) {
+      navigate("/login");
     }
     const myForm = new FormData();
     myForm.set("rating", rating);
@@ -82,7 +82,7 @@ const ProductDetails = () => {
   useEffect(() => {
     if (error) {
       alert.error(error);
-      console.log(error)
+      console.log(error);
       dispatch(clearErrors());
     }
     if (reviewError) {
@@ -105,6 +105,7 @@ const ProductDetails = () => {
         <Fragment>
           <MetaData title={`${product.name} -- ECOMMERCE`} />
           <div className="ProductDetails">
+            {console.log(product)}
             <div>
               <Carousel>
                 {product.images &&
@@ -157,6 +158,10 @@ const ProductDetails = () => {
 
               <div className="detailsBlock-4">
                 Description : <p>{product.description}</p>
+              </div>
+              <div className="detailsBlock-4">
+                Posted By : <p>{product.userName}</p>
+                <p>{product.userPhone}</p>
               </div>
 
               <button onClick={submitReviewToggle} className="submitReview">

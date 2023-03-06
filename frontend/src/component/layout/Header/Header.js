@@ -87,7 +87,7 @@ function Header() {
           {user ? (
             <>
 
-            <Button variant="danger" as={Link} to="/addproduct" >
+            <Button variant="danger" as={Link} to="/addproduct" className="mx-3" >
               Post For Free
             </Button>
             <Button variant="outlined" as={Link} onClick={logoutHandler}>

@@ -7,7 +7,7 @@ const dotenv = require("dotenv");
 const errorMiddleware = require("./middleware/error");
 const cors = require("cors");
 //config
-dotenv.config({ path: "backend/config/config.env" });
+dotenv.config({ path: "./config/config.env" });
 app.use(cookieParser());
 app.use(bodyParser.json({limit: '500mb'}));
 app.use(bodyParser.urlencoded({limit: '500mb', extended: true}));

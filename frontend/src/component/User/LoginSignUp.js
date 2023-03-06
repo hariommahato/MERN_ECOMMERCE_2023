@@ -6,15 +6,14 @@ import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import FaceIcon from "@material-ui/icons/Face";
 import { useDispatch, useSelector } from "react-redux";
-import { clearErrors, login, register} from "../../actions/userActions";
+import { clearErrors, login, register } from "../../actions/userActions";
 import { useAlert } from "react-alert";
-import {BsFillTelephoneFill} from 'react-icons/bs'
+import { BsFillTelephoneFill } from "react-icons/bs";
 
 const LoginSignUp = () => {
   const dispatch = useDispatch();
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const alert = useAlert();
-
 
   const { error, loading, isAuthenticated } = useSelector(
     (state) => state.user
@@ -28,11 +27,11 @@ const LoginSignUp = () => {
   const [user, setUser] = useState({
     name: "",
     email: "",
-    phone:"",
+    phone: "",
     password: "",
   });
 
-  const { name, email, password,phone } = user;
+  const { name, email, password, phone } = user;
 
   const [avatar, setAvatar] = useState("/logo192.png");
   const [avatarPreview, setAvatarPreview] = useState("/logo192.png");
@@ -155,7 +154,7 @@ const LoginSignUp = () => {
                   />
                 </div>
                 <div className="signUpName">
-                  <BsFillTelephoneFill/>
+                  <BsFillTelephoneFill />
                   <input
                     type="number"
                     placeholder="Enter Contact Number"

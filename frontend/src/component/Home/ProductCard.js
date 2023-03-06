@@ -20,15 +20,6 @@ const ProductCard = ({ product }) => {
         </span>
       </div>
       <span>{`₹${product.price}`}</span>
-
-      <div style={{display:"flex",flexDirection:"column",color:"black"}}>
-        <div>
-          <span>{`By: ${product.userName}`}</span>
-        </div>
-        <div>
-          <span>{`Contact:${product.userPhone}`}</span>
-        </div>
-      </div>
     </Link>
   );
 };
